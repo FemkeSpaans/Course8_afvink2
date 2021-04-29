@@ -32,10 +32,15 @@ def info_pubmed(searchword):
 
 def number_of_hits(id_list):
     date_list = []
+    years = []
     for id in id_list:
         handle = Entrez.esummary(db="pubmed", id=id)
         record = Entrez.read(handle)
         date_list.append(record[0]['PubDate'])
-    print(date_list[0:100])
+    for date in date_list:
+        data = date.split(' ')
+        years = data[0]
+    print(years)
+
 
 
