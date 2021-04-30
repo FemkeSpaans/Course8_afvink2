@@ -39,8 +39,20 @@ def number_of_hits(id_list):
         date_list.append(record[0]['PubDate'])
     for date in date_list:
         data = date.split(' ')
-        years = data[0]
+        years.append(data[0])
+    return years
+
+
+def sort_years(years):
+    years.sort()
     print(years)
+    print(years.type())
+    #for i in range(0, len(years)):
+    #    years[i] = int(years[i])
+    #print(years)
+    #for year in range(min(int_years), max(int_years), 5):
+        #print(year)
+
 
 
 
